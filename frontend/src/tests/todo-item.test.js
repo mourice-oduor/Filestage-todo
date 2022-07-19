@@ -5,7 +5,7 @@ import TodoItem from "../TodoItem";
 
 describe("TodoItem", () => {
   const props = {
-    text: "Go to gym",
+    text: "Do some Javascript",
     completed: false,
     onDelete: jest.fn(),
     onToggleCompleted: jest.fn(),
@@ -40,10 +40,10 @@ describe("TodoItem", () => {
 
   describe("when due date is later than tomorrow", () => {
     it("displays due date in `dd MMM, yyyy` format", () => {
-      render(<TodoItem {...props} dueDate="2022-06-05" />);
+      render(<TodoItem {...props} dueDate="2022-07-17" />);
 
       expect(screen.getByText(props.text)).toBeInTheDocument();
-      expect(screen.getByText("Due 05 Jun, 2022")).toBeInTheDocument();
+      expect(screen.getByText("Due 17 Jul, 2022")).toBeInTheDocument();
     });
   });
 
@@ -93,7 +93,7 @@ describe("TodoItem", () => {
       });
       userEvent.click(saveButton);
 
-      expect(props.onSetDueDate).toHaveBeenCalledWith("2022-06-05");
+      expect(props.onSetDueDate).toHaveBeenCalledWith("2022-07-17");
     });
   });
 });
