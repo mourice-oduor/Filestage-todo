@@ -36,7 +36,7 @@ function TodoTests({ onAddTodo }) {
           <TextField
             fullWidth
             label="Task"
-            placeholder="Eg: go to shopping..."
+            placeholder="Eg: Do some Javascript..."
             value={text}
             onKeyPress={(event) => {
               if (event.key === "Enter") {
